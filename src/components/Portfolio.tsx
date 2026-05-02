@@ -11,7 +11,7 @@ const portfolioItems = [
     title: "E-commerce Analytics Dashboard",
     client: "Retail Chain UK",
     description: "Comprehensive dashboard tracking sales performance, customer behavior, and inventory management across 50+ stores.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
     technologies: ["Power BI", "SQL Server", "Azure"],
     metrics: [
       { label: "Revenue Growth", value: "+35%" },
@@ -24,7 +24,7 @@ const portfolioItems = [
     title: "Financial Performance Analytics",
     client: "Investment Firm",
     description: "Real-time financial dashboard providing portfolio performance, risk analysis, and market insights.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=800&fit=crop&q=80",
     technologies: ["Power BI", "Python", "AWS"],
     metrics: [
       { label: "ROI Improvement", value: "+28%" },
@@ -180,6 +180,8 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority={currentIndex === 0}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23e5e7eb' width='1200' height='800'/%3E%3C/svg%3E"
                   className="object-cover"
                 />
               </motion.div>

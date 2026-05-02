@@ -91,7 +91,9 @@ export default function About() {
               src="/New2.jpeg"
               alt="DashCrafters Team"
               fill
-              sizes="100vw"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23d1d5db' width='1920' height='1080'/%3E%3C/svg%3E"
               className="object-cover"
               priority
             />
