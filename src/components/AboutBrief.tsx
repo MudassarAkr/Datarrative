@@ -9,11 +9,12 @@ export default function AboutBrief() {
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       {/* Contained background image - High Resolution Required (1920x1080 or better) */}
-      <div className="absolute inset-4 sm:inset-6 lg:inset-10 z-0 overflow-hidden rounded-3xl">
+        <div className="absolute inset-4 sm:inset-6 lg:inset-10 z-0 overflow-hidden rounded-3xl">
         <Image
           src="/Landing_about.png"
           alt="About DashCrafters"
           fill
+          sizes="100vw"
           priority
           className="object-cover object-center"
         />

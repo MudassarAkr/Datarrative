@@ -26,6 +26,7 @@ export default function Hero() {
             src="/Collab_group.png"
             alt="Professional collaboration"
             fill
+            sizes="100vw"
             priority
             className="object-cover opacity-100"
           />

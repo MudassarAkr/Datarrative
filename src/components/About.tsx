@@ -91,8 +91,8 @@ export default function About() {
               src="/New2.jpeg"
               alt="DashCrafters Team"
               fill
+              sizes="100vw"
               className="object-cover"
-              quality={100}
               priority
             />
           </motion.div>

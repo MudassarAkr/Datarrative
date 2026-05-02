@@ -97,11 +97,12 @@ export default function Services() {
               className={`${service.bgColor} p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200 overflow-hidden`}
             >
               {service.image ? (
-                <div className="relative w-full h-40 mb-6 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+                  <div className="relative w-full h-40 mb-6 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover"
                   />
                 </div>

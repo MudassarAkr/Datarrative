@@ -71,6 +71,7 @@ export default function ServicesDetail() {
                     src={s.image}
                     alt={s.title}
                     fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover"
                   />
                 </div>

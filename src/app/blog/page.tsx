@@ -214,6 +214,7 @@ export default function BlogPage() {
                         src={blog.image}
                         alt={blog.title}
                         fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -272,11 +273,12 @@ export default function BlogPage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
                 >
-                  <div className="relative h-48">
+                    <div className="relative h-48">
                     <Image
                       src={blog.image}
                       alt={blog.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
