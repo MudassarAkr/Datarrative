@@ -1,19 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
-  BarChart3, 
-  PieChart, 
-  FileText, 
-  Wrench,
-  Zap,
-  Target,
-  Users
-} from 'lucide-react';
-
+import Image from 'next/image';
 const services = [
   {
-    icon: BarChart3,
+    image: "/Collaboration.jpeg",
     title: "Data Analysis",
     description: "Comprehensive data analysis to uncover patterns and drive better decisions.",
     color: "from-blue-500 to-blue-600",
@@ -21,7 +12,7 @@ const services = [
     iconColor: "text-blue-600 dark:text-blue-400",
   },
   {
-    icon: PieChart,
+    image: "/Power_BI.jpeg",
     title: "Power BI Dashboards",
     description: "Interactive, real-time dashboards that transform complex data into clear visuals.",
     color: "from-purple-500 to-purple-600",
@@ -29,7 +20,7 @@ const services = [
     iconColor: "text-purple-600 dark:text-purple-400",
   },
   {
-    icon: FileText,
+    image: "/Dashboard_map.jpeg",
     title: "Reports & Insights",
     description: "Executive-ready reports and insights tailored to your stakeholders.",
     color: "from-green-500 to-green-600",
@@ -37,30 +28,12 @@ const services = [
     iconColor: "text-green-600 dark:text-green-400",
   },
   {
-    icon: Wrench,
+    image: "/Custom.jpeg",
     title: "Custom Solutions",
     description: "Bespoke analytics solutions designed around your data and workflows.",
     color: "from-orange-500 to-orange-600",
     bgColor: "bg-orange-50 dark:bg-orange-900/20",
     iconColor: "text-orange-600 dark:text-orange-400",
-  },
-];
-
-const features = [
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized dashboards that load instantly and update in real-time.",
-  },
-  {
-    icon: Users,
-    title: "User-Friendly",
-    description: "Intuitive interfaces designed for non-technical users to easily navigate.",
-  },
-  {
-    icon: Target,
-    title: "Goal-Oriented",
-    description: "Every solution is crafted to meet your specific business objectives.",
   },
 ];
 
@@ -121,11 +94,18 @@ export default function Services() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className={`${service.bgColor} p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200`}
+              className={`${service.bgColor} p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200 overflow-hidden`}
             >
-              <div className="flex items-center justify-center w-16 h-16 mb-6 rounded-xl bg-white dark:bg-gray-800 shadow-md group-hover:shadow-lg transition-shadow">
-                <service.icon className={`w-8 h-8 ${service.iconColor}`} />
-              </div>
+              {service.image ? (
+                <div className="relative w-full h-40 mb-6 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : null}
               
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 {service.title}
@@ -138,49 +118,6 @@ export default function Services() {
               <div className={`mt-6 h-1 w-0 bg-gradient-to-r ${service.color} rounded-full group-hover:w-full transition-all duration-500`} />
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Features Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose <span className="gradient-text">DashCrafters</span>?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              We combine technical expertise with business acumen to deliver solutions that drive real results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
-              >
-                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 shadow-lg group-hover:shadow-xl transition-shadow">
-                  <feature.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  {feature.title}
-                </h4>
-                
-                <p className="text-gray-600 dark:text-gray-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Process Section */}
@@ -233,4 +170,5 @@ export default function Services() {
     </section>
   );
 }
+
 

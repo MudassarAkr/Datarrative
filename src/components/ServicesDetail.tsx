@@ -1,33 +1,34 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BarChart3, PieChart, FileText, Wrench, CheckCircle2, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
   {
-    icon: BarChart3,
+    image: '/Collaboration.jpeg',
     title: 'Data Analysis',
     desc: 'Transform raw data into clear answers. We clean, model and analyze your datasets to uncover patterns and opportunities that drive decisions.',
     bullets: ['Exploratory data analysis', 'KPI design & governance', 'Segmentation & cohorts'],
     color: 'from-blue-500 to-indigo-500',
   },
   {
-    icon: PieChart,
+    image: '/Power_BI.jpeg',
     title: 'Power BI Dashboards',
     desc: 'Interactive, real‑time dashboards tailored to roles. Reliable models, performant DAX, and pixel‑perfect layouts for every device.',
     bullets: ['Data modeling & DAX', 'Row‑level security', 'Theming & layout systems'],
     color: 'from-purple-500 to-fuchsia-500',
   },
   {
-    icon: FileText,
+    image: '/Dashboard_map.jpeg',
     title: 'Reports & Insights',
     desc: 'Executive‑ready reports with context and commentary. Automated refresh and distribution so the right people get the right insights on time.',
     bullets: ['Automated reporting', 'Narrative insights', 'Distribution & alerts'],
     color: 'from-emerald-500 to-teal-500',
   },
   {
-    icon: Wrench,
+    image: '/Custom.jpeg',
     title: 'Custom Solutions',
     desc: 'Bespoke analytics workflows that fit your business: integrations, data pipelines, and tailored visuals that answer your exact questions.',
     bullets: ['Integrations & pipelines', 'Custom visuals', 'Performance optimization'],
@@ -65,12 +66,15 @@ export default function ServicesDetail() {
               transition={{ duration: 0.6, delay: i * 0.05 }}
               className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${s.color} shadow-lg flex items-center justify-center`}>
-                  <s.icon className="w-7 h-7 text-white" />
+                <div className="relative w-full h-44 mb-6 rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{s.title}</h3>
-              </div>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-5">{s.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{s.desc}</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {s.bullets.map((b) => (
@@ -117,5 +121,6 @@ export default function ServicesDetail() {
     </section>
   );
 }
+
 
 

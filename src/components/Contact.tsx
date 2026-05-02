@@ -111,7 +111,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -121,10 +121,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to transform your data into actionable insights? Let's discuss your project and see how we can help your business grow.
           </p>
         </motion.div>
@@ -137,8 +137,8 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Send us a Message
               </h3>
 
@@ -147,10 +147,10 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center"
+                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center"
                 >
-                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 mr-3" />
-                  <span className="text-green-800 dark:text-green-200">
+                  <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                  <span className="text-green-800">
                     Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
                   </span>
                 </motion.div>
@@ -160,34 +160,34 @@ export default function Contact() {
                 {/* Name and Email Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <input
                       {...register('name')}
                       type="text"
                       id="name"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500"
                       placeholder="Your full name"
                     />
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name.message}</p>
+                      <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
                     </label>
                     <input
                       {...register('email')}
                       type="email"
                       id="email"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500"
                       placeholder="your@email.com"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
+                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
@@ -195,27 +195,27 @@ export default function Contact() {
                 {/* Company and Phone Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                       Company
                     </label>
                     <input
                       {...register('company')}
                       type="text"
                       id="company"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500"
                       placeholder="Your company name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <input
                       {...register('phone')}
                       type="tel"
                       id="phone"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500"
                       placeholder="+44 (0) 20 1234 5678"
                     />
                   </div>
@@ -223,13 +223,13 @@ export default function Contact() {
 
                 {/* Service Selection */}
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
                     Service Interested In *
                   </label>
                   <select
                     {...register('service')}
                     id="service"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -239,24 +239,24 @@ export default function Contact() {
                     ))}
                   </select>
                   {errors.service && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.service.message}</p>
+                    <p className="mt-1 text-sm text-red-600">{errors.service.message}</p>
                   )}
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
                   </label>
                   <textarea
                     {...register('message')}
                     id="message"
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500 resize-none"
                     placeholder="Tell us about your project and requirements..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message.message}</p>
+                    <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -268,7 +268,7 @@ export default function Contact() {
                     id="newsletter"
                     className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                   />
-                  <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                  <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-700">
                     Subscribe to our newsletter for data analytics tips and industry insights
                   </label>
                 </div>
@@ -304,8 +304,8 @@ export default function Contact() {
             className="space-y-8"
           >
             {/* Contact Details */}
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Contact Information
               </h3>
               
@@ -323,13 +323,13 @@ export default function Contact() {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      <h4 className="text-lg font-semibold text-gray-900">
                         {info.title}
                       </h4>
-                      <p className="text-primary-600 dark:text-primary-400 font-medium">
+                      <p className="text-primary-600 font-medium">
                         {info.details}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      <p className="text-gray-600 text-sm">
                         {info.description}
                       </p>
                     </div>
@@ -339,8 +339,8 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="bg-white rounded-3xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Follow Us
               </h3>
               
@@ -356,7 +356,7 @@ export default function Contact() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1 }}
-                    className={`w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-300 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                    className={`w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 ${social.color} transition-all duration-300 hover:shadow-lg`}
                     aria-label={social.name}
                   >
                     <social.icon className="w-6 h-6" />
@@ -382,4 +382,5 @@ export default function Contact() {
     </section>
   );
 }
+
 

@@ -1,38 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Users, Clock, Target, CheckCircle, TrendingUp } from 'lucide-react';
-
-const achievements = [
-  {
-    icon: Award,
-    title: "Certified Experts",
-    description: "Microsoft Certified Power BI professionals with advanced analytics certifications.",
-    color: "text-yellow-600 dark:text-yellow-400",
-    bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
-  },
-  {
-    icon: Users,
-    title: "50+ Happy Clients",
-    description: "Successfully delivered projects for businesses across various industries in the UK.",
-    color: "text-blue-600 dark:text-blue-400",
-    bgColor: "bg-blue-50 dark:bg-blue-900/20",
-  },
-  {
-    icon: Clock,
-    title: "5+ Years Experience",
-    description: "Extensive experience in data analytics, business intelligence, and dashboard development.",
-    color: "text-green-600 dark:text-green-400",
-    bgColor: "bg-green-50 dark:bg-green-900/20",
-  },
-  {
-    icon: Target,
-    title: "100% Goal Achievement",
-    description: "Every project delivered meets or exceeds client objectives and business goals.",
-    color: "text-purple-600 dark:text-purple-400",
-    bgColor: "bg-purple-50 dark:bg-purple-900/20",
-  },
-];
+import Image from 'next/image';
+import { CheckCircle, TrendingUp } from 'lucide-react';
 
 const values = [
   {
@@ -51,15 +21,6 @@ const values = [
     title: "Transparent Communication",
     description: "Clear, honest communication throughout the project lifecycle with regular updates and feedback.",
   },
-];
-
-const skills = [
-  { name: "Power BI", level: 95 },
-  { name: "SQL & Database", level: 90 },
-  { name: "Python Analytics", level: 85 },
-  { name: "Tableau", level: 80 },
-  { name: "Azure Analytics", level: 85 },
-  { name: "Excel Advanced", level: 90 },
 ];
 
 export default function About() {
@@ -108,7 +69,7 @@ export default function About() {
               {/* Mission Statement */}
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl p-6">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
-                  <Target className="w-5 h-5 mr-2 text-primary-600 dark:text-primary-400" />
+                  <TrendingUp className="w-5 h-5 mr-2 text-primary-600 dark:text-primary-400" />
                   Our Mission
                 </h4>
                 <p className="text-gray-700 dark:text-gray-300 italic">
@@ -118,85 +79,24 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right Column - Achievements */}
+          {/* Right Column - Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl"
           >
-            <div className="grid grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`${achievement.bgColor} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow`}
-                >
-                  <achievement.icon className={`w-8 h-8 ${achievement.color} mb-4`} />
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {achievement.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {achievement.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+            <Image
+              src="/New2.jpeg"
+              alt="DashCrafters Team"
+              fill
+              className="object-cover"
+              quality={100}
+              priority
+            />
           </motion.div>
         </div>
-
-        {/* Skills Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl mb-16 border border-gray-200"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Our <span className="gradient-text">Expertise</span>
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              We master the tools and technologies that power modern data analytics and business intelligence.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-2"
-              >
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">
-                    {skill.name}
-                  </span>
-                  <span className="text-primary-600 dark:text-primary-400 font-semibold">
-                    {skill.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                  <motion.div
-                    className="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Values Section */}
         <motion.div
@@ -262,4 +162,5 @@ export default function About() {
     </section>
   );
 }
+
 

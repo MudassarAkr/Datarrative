@@ -4,8 +4,8 @@ import type React from 'react';
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Blog post data model
 type Post = {

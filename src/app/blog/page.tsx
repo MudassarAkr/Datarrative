@@ -89,25 +89,25 @@ export default function BlogPage() {
   const regularBlogs = filteredBlogs.filter(blog => !blog.featured);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       <main>
         {/* Hero Section refined for site consistency */}
         <section className="relative overflow-hidden pt-28 pb-24 md:pt-32">
           {/* Base gradient + subtle grid to match site */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900" />
-            <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_1px_1px,#6366f1_1px,transparent_0)] [background-size:40px_40px] dark:opacity-10" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_20%,rgba(255,255,255,0.8)_70%,white_100%)] dark:bg-[radial-gradient(circle_at_50%_50%,transparent_20%,rgba(0,0,0,0.4)_70%,rgba(0,0,0,0.8)_100%)]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
+            <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_1px_1px,#6366f1_1px,transparent_0)] [background-size:40px_40px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_20%,rgba(255,255,255,0.8)_70%,white_100%)][radial-gradient(circle_at_50%_50%,transparent_20%,rgba(0,0,0,0.4)_70%,rgba(0,0,0,0.8)_100%)]" />
 
             {/* Soft animated orbs (subtle) */}
             <motion.div
-              className="absolute top-1/4 -right-24 w-80 h-80 rounded-full bg-gradient-to-r from-primary-100/40 to-secondary-200/40 dark:from-primary-900/30 dark:to-secondary-800/30 blur-3xl"
+              className="absolute top-1/4 -right-24 w-80 h-80 rounded-full bg-gradient-to-r from-primary-100/40 to-secondary-200/40 blur-3xl"
               animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             />
             <motion.div
-              className="absolute -bottom-28 -left-28 w-[420px] h-[420px] rounded-full bg-gradient-to-r from-secondary-100/40 to-purple-200/40 dark:from-secondary-900/30 dark:to-purple-800/30 blur-3xl"
+              className="absolute -bottom-28 -left-28 w-[420px] h-[420px] rounded-full bg-gradient-to-r from-secondary-100/40 to-purple-200/40 blur-3xl"
               animate={{ scale: [1.1, 1, 1.1], opacity: [0.25, 0.35, 0.25] }}
               transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
             />
@@ -118,7 +118,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4"
+              className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4"
             >
               Data Analytics Insights
             </motion.h1>
@@ -126,7 +126,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
             >
               Explore expert insights, tutorials, and best practices in data analytics and Power BI
             </motion.p>
@@ -136,7 +136,7 @@ export default function BlogPage() {
         {/* Search and Filter Section */}
         <section className="py-8 -mt-16 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg p-5 md:p-6">
+            <div className="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 rounded-2xl border border-gray-200 shadow-lg p-5 md:p-6">
               <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 {/* Search Bar */}
                 <div className="relative w-full md:w-[28rem]">
@@ -148,7 +148,7 @@ export default function BlogPage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setIsSearchFocused(true)}
                     onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   />
                   {/* Search Suggestions */}
                   <AnimatePresence>
@@ -157,16 +157,16 @@ export default function BlogPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+                        className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
                       >
                         {filteredBlogs.slice(0, 3).map((blog) => (
                           <Link
                             key={blog.id}
                             href={blog.link}
-                            className="block p-3 hover:bg-gray-50 dark:hover:bg-gray-700"
+                            className="block p-3 hover:bg-gray-50:bg-gray-700"
                           >
-                            <h4 className="text-sm font-medium text-gray-900 dark:text-white">{blog.title}</h4>
-                            <p className="text-xs text-gray-500 dark:text-gray-400">{blog.tags.join(' • ')}</p>
+                            <h4 className="text-sm font-medium text-gray-900">{blog.title}</h4>
+                            <p className="text-xs text-gray-500">{blog.tags.join(' • ')}</p>
                           </Link>
                         ))}
                       </motion.div>
@@ -183,7 +183,7 @@ export default function BlogPage() {
                       className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all border ${
                         selectedCategory === category.id
                           ? 'text-white bg-gradient-to-r from-primary-600 to-secondary-600 shadow-sm border-transparent'
-                          : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-primary-300 hover:text-primary-600 dark:hover:text-primary-400'
+                          : 'bg-white text-gray-700 border-gray-300 hover:border-primary-300 hover:text-primary-600:text-primary-400'
                       }`}
                     >
                       {category.icon && <category.icon className="h-4 w-4" />}
@@ -200,7 +200,7 @@ export default function BlogPage() {
         {featuredBlogs.length > 0 && (
           <section className="py-12">
             <div className="container mx-auto px-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Posts</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Posts</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {featuredBlogs.map((blog) => (
                   <motion.article
@@ -262,7 +262,7 @@ export default function BlogPage() {
         {/* Regular Posts Grid */}
         <section className="py-12">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Latest Articles</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularBlogs.map((blog, index) => (
                 <motion.article
@@ -270,7 +270,7 @@ export default function BlogPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
                 >
                   <div className="relative h-48">
                     <Image
@@ -286,19 +286,19 @@ export default function BlogPage() {
                       {blog.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs rounded-full"
+                          className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-500 transition-colors">
                       {blog.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+                    <p className="text-gray-600 mb-4 line-clamp-2">
                       {blog.summary}
                     </p>
-                    <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center justify-between text-sm text-gray-500">
                       <div className="flex items-center gap-4">
                         <span className="flex items-center">
                           <User className="h-4 w-4 mr-1" />
@@ -330,3 +330,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

@@ -201,7 +201,7 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors"
                 aria-label="Next project"
               >
-                <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                <ChevronRight className="w-6 h-6 text-gray-700" />
               </button>
 
               {/* Project Counter */}
@@ -219,31 +219,31 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                 transition={{ duration: 0.5 }}
               >
                 {/* Client Badge */}
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4">
                   <BarChart3 className="w-4 h-4 mr-2" />
                   {currentItem.client}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {currentItem.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {currentItem.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-400 uppercase tracking-wide mb-3">
+                  <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-3">
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {currentItem.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
                       >
                         {tech}
                       </span>
@@ -255,10 +255,10 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   {currentItem.metrics.map((metric, index) => (
                     <div key={index} className="text-center">
-                      <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                      <div className="text-2xl font-bold text-primary-600">
                         {metric.value}
                       </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                      <div className="text-sm text-gray-600">
                         {metric.label}
                       </div>
                     </div>
@@ -271,15 +271,15 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center space-x-2 p-6 bg-gray-50 dark:bg-gray-700">
+          <div className="flex justify-center space-x-2 p-6 bg-gray-50">
             {portfolioItems.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-primary-600 dark:bg-primary-400 scale-125'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                    ? 'bg-primary-600 scale-125'
+                    : 'bg-gray-300 hover:bg-gray-400:bg-gray-500'
                 }`}
                 aria-label={`Go to project ${index + 1}`}
               />
@@ -298,14 +298,14 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
           {showExpandButton ? (
             <button
               onClick={handleExpandToggle}
-              className="inline-flex items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-500 hover:text-primary-600:text-primary-400 transition-all duration-300"
             >
               {isExpanded ? 'Show Less' : 'View All Projects'}
             </button>
           ) : (
             <a
               href="/portfolio"
-              className="inline-flex items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-500 hover:text-primary-600:text-primary-400 transition-all duration-300"
             >
               View All Projects
             </a>
@@ -343,7 +343,7 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                     delay: isExpanded ? index * 0.04 : 0, 
                     ease: [0.25, 0.1, 0.25, 1] 
                   }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group border border-gray-200"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group border border-gray-200"
                 >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -358,10 +358,10 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                 </div>
                 
                 <div className="p-6">
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {item.description}
                   </p>
                   
@@ -369,13 +369,13 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
                     {item.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs"
+                        className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs"
                       >
                         {tech}
                       </span>
                     ))}
                     {item.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs">
+                      <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">
                         +{item.technologies.length - 3} more
                       </span>
                     )}
@@ -390,4 +390,5 @@ export default function Portfolio({ showExpandButton = false }: PortfolioProps) 
     </section>
   );
 }
+
 

@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
 import AboutBrief from '@/components/AboutBrief';
-import BlogSection from '../components/BlogSection'; // Updated import path for BlogSection
+import BlogSection from '@/components/BlogSection'; // Updated import path for BlogSection
 // Contact removed from landing per requirements
 import Footer from '@/components/Footer';
 
@@ -115,4 +115,5 @@ export default function Home() {
     </>
   );
 }
+
 
